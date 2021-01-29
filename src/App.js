@@ -9,21 +9,8 @@ function App() {
     clientWidth: target != null ? target.clientWidth : null,
   });
 
-  const [header, setHeader] = useState('Welcome to React Hooks');
-  const [backgroundColor, setBackgroundColor] = useState("#fff000");
+
   const [resizeListener, sizes] = useResizeAware(customReporter);
-
-  
-
-
-
-  const handleHeaderInput = e => {
-    setHeader(e.target.value);
-  };
-
-  const handleSetBackgroundColor = e => {
-    setBackgroundColor(e.target.value);
-  }
 
   const getClassName = (clientWidth) => {
     let classNames = '';
@@ -35,14 +22,6 @@ function App() {
     }
     return classNames;
   }
-
-  React.useEffect(() => {
-    console.log('Width: ' + sizes.width + ' Height: ' + sizes.height);
-
-    if(sizes.width < 200){
-      setBackgroundColor("green");
-    }
-  }, [sizes.width, sizes.height]);
 
   return (
 
