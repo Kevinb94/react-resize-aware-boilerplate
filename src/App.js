@@ -47,7 +47,7 @@ function App() {
   return (
 
     <div id="AggregateWidget" 
-    style={{ position: 'relative', width: sizes.clientWidth }}>
+    style={{ position: 'relative'}}>
       {resizeListener}
       <div 
         className={`testimonials ${getClassName(sizes.clientWidth)}`}
